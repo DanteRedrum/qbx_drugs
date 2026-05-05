@@ -169,7 +169,7 @@ local function sellToPed(ped)
                                 icon = 'fas fa-hand-holding-dollar',
                                 label = locale('info.target_drug_offer', currentOfferDrug.amount, currentOfferDrug.chosen.label, currentOfferDrug.total),
                                 onSelect = function()
-                                    TriggerServerEvent('qb-drugs:server:sellCornerDrugs', currentOfferDrug.idx, currentOfferDrug.amount, currentOfferDrug.total)
+                                    TriggerServerEvent('qb-drugs:server:sellCornerDrugs', currentOfferDrug.idx, currentOfferDrug.amount)
                                     currentOfferDrug = nil
                                     hasTarget = false
                                     lib.playAnim(cache.ped, 'gestures@f@standing@casual', 'gesture_point', 3.0, 3.0, -1, 49, 0, false, false, false)
@@ -207,7 +207,7 @@ local function sellToPed(ped)
                         if IsControlJustPressed(0, 38) then
                             lib.hideTextUI()
                             textDrawn = false
-                            TriggerServerEvent('qb-drugs:server:sellCornerDrugs', currentOfferDrug.idx, currentOfferDrug.amount, currentOfferDrug.total)
+                            TriggerServerEvent('qb-drugs:server:sellCornerDrugs', currentOfferDrug.idx, currentOfferDrug.amount)
                             hasTarget = false
                             lib.playAnim(cache.ped, 'gestures@f@standing@casual', 'gesture_point', 3.0, 3.0, -1, 49, 0, false, false, false)
                             Wait(650)
